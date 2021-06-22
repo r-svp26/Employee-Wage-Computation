@@ -1,16 +1,23 @@
 #!/bin/bash -x
 
+IS_PART_TIME=1;
+IS_FULL_TIME=2;
 EMP_RATE_PER_HR=20;
-FULL_TIME_HR=8;
 
-empCheck=$((RANDOM%2))
-isPresent=1;
+empCheck=$((RANDOM%3))
 
-if [ $isPresent -eq $empCheck ]
+if [ $IS_FULL_TIME -eq $empCheck ]
 then
-	salary=$(( $EMP_RATE_PER_HR*$FULL_TIME_HR ))
-else 
-	salary=0;
+	empHrs=16
+
+elif [ $IS_PART_TIME -eq $empCheck ]
+then
+	empHrs=8
+
+else
+	empHrs=0
+
 fi 
 
-echo "Daily Wage of an Employee= " $salary
+salary=$((empHrs*EMP_RATE_PER_HR))
+echo $salary
