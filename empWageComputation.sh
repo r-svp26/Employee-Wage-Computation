@@ -16,10 +16,10 @@ declare -A dailyWages
 function getWorkHrs() {
         case $1 in
                 $IS_FULL_TIME)
-                        empHrs=16
+                        empHrs=8
                         ;;
                 $IS_PART_TIME)
-                        empHrs=8
+                        empHrs=4
                         ;;
                 *)
                         empHrs=0
